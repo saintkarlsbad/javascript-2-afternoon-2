@@ -18,7 +18,9 @@ var arr = [10,20,30];
 */
 
 //Code Here
-
+function first (arr) {
+  return arr.shift()
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -33,7 +35,9 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
+function last (arr) {
+  return arr.pop()
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -48,7 +52,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 */
 
 //Code Here
-
+function looper (family) {
+  for (var i = 0; i < family.length; i++ ) {
+    alert(family[i])
+  }
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -63,7 +71,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-
+function reversedLooper (letters) {
+  for (var i = letters.length -1; i >= 0; i--) {
+    alert(letters[i])
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -78,7 +90,18 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
+function evenFinder (nums) {
+  var evens = [];
+  var odds = [];
+  for (var i=0; i < nums.length; i++) {
+    if (nums[i] % 2 === 0) {
+      evens.push(nums[i]);
+    } else {
+      odds.push(nums[i]);
+    }
+  }
+  return evens;
+}
 
 
 ////////// EXTRA PRACTICE PROBLEMS BELOW //////////
@@ -95,6 +118,19 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+function divider (numbersArray) {
+  var evens = [];
+  var odds = [];
+  for (var i=0; i < numbersArray.length; i++) {
+    if (numbersArray[i] % 2 === 0) {
+      evens.push(numbersArray[i]);
+    } else {
+      odds.push(numbersArray[i]);
+    }
+  }
+var newArray = [evens, odds]
+return newArray;
+}
 
 
 
@@ -117,6 +153,16 @@ var getRandomArbitrary = function() {
 
 //Code Here
 
+
+function finder (array) {
+  var number = getRandomArbitrary();
+  for (var i=0; i < array.length; i++) {
+    if (array[i] === number) {
+      return true;
+    }
+  }
+  return false;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -143,7 +189,30 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem (myGroceryList, item) {
+  if (!item) {
+    var emptyArray = [];
+    return emptyArray;
+  }
+  for (var i =0; i < myGroceryList.length; i++) {
+    if (myGroceryList[i] === item) {
+      myGroceryList.splice(i, 1);
+      return myGroceryList;
+    }
 
+  }
+  return myGroceryList;
+}
+
+function addItem (myGroceryList, item) {
+  if (!item) {
+    var emptyArray = [];
+    return emptyArray;
+  } else {
+    myGroceryList.push(item)
+    return myGroceryList;
+  }
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -153,7 +222,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker () {
+  var arr = [];
+  for (var i=1; i < 216; i++) {
+    arr.push(i)
+  }
+  return arr;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -169,7 +244,14 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
-
+function addTen (numbers) {
+  var arr = [];
+  for (var i=0; i < numbers.length; i++) {
+    var num = parseInt(numbers[i])+10;
+    arr.push(num)
+  }
+  return arr;
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -194,7 +276,18 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer (arr1, arr2) {
+  var arr1Length = arr1.length;
+  var arr2Length = arr2.length;
+  if (arr1Length > arr2Length) {
+    return arr1;
+  } else if (arr2Length > arr1Length) {
+    return arr2;
+  }
+  else {
+    return arr1, arr2
+  }
+}
 
 
 /*
@@ -206,7 +299,17 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function both (arr1, arr2) {
+  var newishArray = [];
+  for (var i=0; i < arr1.length; i++) {
+    for (var x=0; x < arr2.length; x++) {
+      if (arr1[i] === arr2[x]) {
+        newishArray.push(arr1[i]);
+      }
+    }
+  }
+  return newishArray;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -240,14 +343,17 @@ var colt = {
 // Do not edit the code above.
 
 /*
-  Above you're given an empty array with four objects. 
+  Above you're given an empty array, and four objects. 
   Fill the devMountainEmployees array with those four objects. 
   After that console.log the length of the Array and make sure that it's equal to 4. 
 */
 
 //Code Here
-
-
+devMountainEmployees.push(tyler)
+devMountainEmployees.push(cahlan)
+devMountainEmployees.push(ryan)
+devMountainEmployees.push(colt)
+console.log(devMountainEmployees.length)
 
 /*
   Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
@@ -255,7 +361,11 @@ var colt = {
 */
 
 //Code Here
-
+for (var i = 0; i < devMountainEmployees.length; i++) {
+  if (devMountainEmployees[i]===cahlan) {
+    devMountainEmployees.splice(i, 1)
+  }
+} 
 
 
 ////////// PROBLEM 13 //////////
@@ -267,7 +377,7 @@ var colt = {
 */
 
 //Code Here
-
+var users = [];
 
 
 /*
@@ -286,7 +396,11 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
-
+for (var i = 0; i < users.length; i++) {
+  if (users[i]===user1) {
+    users.push(user1)
+  }
+} 
 
 
 /*
@@ -300,7 +414,11 @@ var user1 = {
 */
 
 //Code Here
-
+for (var i = 0; i < users.length; i++) {
+  if (users[i]===user1) {
+    users.push(user1)
+  }
+} 
 
 
 /*
